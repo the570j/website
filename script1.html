@@ -1,30 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Silent Aim</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Silent Aim Script - Galaxy Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body class="space-bg">
+<body>
+
+  <div id="starfield"></div>
+
   <header>
-    <div class="logo">🚀 Galaxy Hub</div>
+    <div class="logo">🚀 Roblox Galaxy Hub</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="scripts.html">Scripts</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="scripts.html" class="nav-link">Scripts</a>
     </nav>
   </header>
-  <main class="container">
-    <section class="card">
-      <h2>Silent Aim Script</h2>
-      <pre id="scriptBox">loadstring(game:HttpGet("https://example.com/silentaim.lua"))()</pre>
-      <button onclick="copyScript()">Copy Script</button>
-    </section>
+
+  <main class="script-detail">
+    <h1>Silent Aim Script</h1>
+    <pre class="script-code">loadstring(game:HttpGet("https://example.com/silentaim.lua"))()</pre>
+    <button class="btn-glow" onclick="copyScript()">Copy Script</button>
   </main>
+
+  <footer>
+    <p>© 2025 Roblox Galaxy Hub | Made with ❤️ in Space</p>
+  </footer>
+
+  <script src="assets/stars.js"></script>
   <script>
     function copyScript() {
-      const text = document.getElementById('scriptBox').innerText;
-      navigator.clipboard.writeText(text);
-      alert('Script copied to clipboard!');
+      const text = document.querySelector('.script-code').innerText;
+      navigator.clipboard.writeText(text).then(() => alert("Script copied!"));
     }
   </script>
 </body>
