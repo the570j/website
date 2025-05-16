@@ -2,29 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Galaxy Scripts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roblox Scripts - Galaxy Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
 </head>
-<body class="space-bg">
+<body>
+
+  <div id="starfield"></div>
+
   <header>
-    <div class="logo">🚀 Galaxy Hub</div>
+    <div class="logo">🚀 Roblox Galaxy Hub</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="scripts.html">Scripts</a>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="scripts.html" class="nav-link active">Scripts</a>
     </nav>
   </header>
-  <main class="container">
-    <section class="card">
+
+  <main class="scripts-main">
+    <h1>Available Scripts</h1>
+    <section class="script-card">
       <h2>Silent Aim</h2>
-      <p>Automatically lock onto the nearest target.</p>
-      <a href="script1.html"><button>View</button></a>
+      <p>Automatically locks onto the nearest target with precision.</p>
+      <button class="btn-glow" onclick="copyScript('loadstring(game:HttpGet(\\'https://example.com/silentaim.lua\\'))()')">Copy Script</button>
     </section>
-    <section class="card">
+
+    <section class="script-card">
       <h2>ESP Vision</h2>
-      <p>See through walls with glowing tracers and boxes.</p>
-      <a href="script2.html"><button>View</button></a>
+      <p>See players through walls with glowing boxes and tracers.</p>
+      <button class="btn-glow" onclick="copyScript('loadstring(game:HttpGet(\\'https://example.com/esp.lua\\'))()')">Copy Script</button>
     </section>
   </main>
+
+  <footer>
+    <p>© 2025 Roblox Galaxy Hub | Made with ❤️ in Space</p>
+  </footer>
+
+  <script src="assets/stars.js"></script>
+  <script>
+    function copyScript(code) {
+      navigator.clipboard.writeText(code).then(() => {
+        alert("Script copied to clipboard!");
+      });
+    }
+  </script>
 </body>
 </html>
