@@ -1,78 +1,138 @@
-body.space-bg {
-  font-family: 'Orbitron', sans-serif;
-  background: radial-gradient(ellipse at bottom, #0d0d2b 0%, #000000 100%);
-  color: #ffffff;
+/* Fonts */
+body, button {
+  font-family: 'Audiowide', cursive;
   margin: 0;
+  color: #00fff7;
+  background: #000014;
   overflow-x: hidden;
 }
 
+#starfield {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background: black;
+}
+
+/* Header */
+
 header {
-  background: rgba(0, 0, 50, 0.6);
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,20,0.75);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .logo {
-  color: #0ff;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  color: #00f0ff;
+  text-shadow:
+    0 0 5px #00ffff,
+    0 0 10px #00ffff,
+    0 0 20px #00ffff,
+    0 0 40px #00ffff;
 }
 
 nav a {
-  color: #0ff;
+  color: #00fff7;
   text-decoration: none;
-  margin-left: 1.5rem;
-  transition: color 0.3s;
+  margin-left: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #00fff7;
+  transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
 }
 
 nav a:hover {
-  color: #fff;
-}
-
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin-bottom: 2rem;
-  border: 1px solid #0ff2;
-}
-
-.card h2 {
   color: #0ff;
 }
 
-button {
-  background: #0ff;
-  color: #000;
-  padding: 0.6rem 1rem;
+/* Main Content */
+
+main {
+  max-width: 900px;
+  margin: 3rem auto 5rem auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 5;
+  text-align: center;
+}
+
+/* Hero Section */
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow:
+    0 0 10px #00ffff,
+    0 0 20px #00ffff;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  color: #99ffffcc;
+  text-shadow:
+    0 0 5px #00cccc;
+}
+
+.btn-glow {
+  background: linear-gradient(90deg, #00fff7, #0077ff);
   border: none;
-  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  color: black;
+  font-weight: 900;
   cursor: pointer;
-  font-family: inherit;
-  transition: background 0.3s;
+  box-shadow:
+    0 0 8px #00fff7,
+    0 0 20px #00ffff,
+    0 0 30px #00ffff;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
-button:hover {
-  background: #08f;
-  color: white;
+.btn-glow:hover {
+  box-shadow:
+    0 0 20px #00ffff,
+    0 0 40px #00ffff,
+    0 0 60px #00ffff;
+  transform: scale(1.05);
 }
 
-pre {
-  background: #020617;
-  padding: 1rem;
-  border-radius: 8px;
-  white-space: pre-wrap;
-  overflow-x: auto;
-  border: 1px solid #334155;
-  margin-bottom: 1rem;
+/* Planets Container */
+
+.planets-container {
+  position: relative;
+  height: 350px;
+  margin-top: 50px;
+  overflow: visible;
 }
 
 /* Planets */
@@ -80,28 +140,40 @@ pre {
 .planet {
   position: absolute;
   border-radius: 50%;
-  background: radial-gradient(circle, #fff, #0ff, #00f);
-  opacity: 0.2;
-  z-index: 0;
+  filter: drop-shadow(0 0 10px #0ff);
+  opacity: 0.85;
+  box-shadow:
+    0 0 15px 3px #00ffff;
+  animation-timing-function: ease-in-out;
 }
 
-.planet-1 {
-  width: 200px;
-  height: 200px;
-  top: 100px;
-  left: -80px;
-  animation: float 15s ease-in-out infinite;
+.planet1 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle at center, #00dfff, #004488);
+  top: 50px;
+  left: 10%;
+  animation: orbit1 20s linear infinite;
 }
 
-.planet-2 {
-  width: 300px;
-  height: 300px;
-  bottom: -100px;
-  right: -120px;
-  animation: float 30s ease-in-out infinite;
+.planet2 {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at center, #ff88cc, #aa0044);
+  top: 120px;
+  left: 50%;
+  animation: orbit2 15s linear infinite;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-30px); }
+.planet3 {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at center, #ccff88, #557700);
+  top: 60px;
+  left: 80%;
+  animation: orbit3 30s linear infinite;
 }
+
+@keyframes orbit1 {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  50% { transform: translateX(
