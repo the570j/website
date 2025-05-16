@@ -1,1 +1,31 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Silent Aim</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="space-bg">
+  <header>
+    <div class="logo">🚀 Galaxy Hub</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="scripts.html">Scripts</a>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="card">
+      <h2>Silent Aim Script</h2>
+      <pre id="scriptBox">loadstring(game:HttpGet("https://example.com/silentaim.lua"))()</pre>
+      <button onclick="copyScript()">Copy Script</button>
+    </section>
+  </main>
+  <script>
+    function copyScript() {
+      const text = document.getElementById('scriptBox').innerText;
+      navigator.clipboard.writeText(text);
+      alert('Script copied to clipboard!');
+    }
+  </script>
+</body>
+</html>
