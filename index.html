@@ -3,60 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Roblox Scripts</title>
-  <style>
-    body {
-      background: #0f172a;
-      margin: 0;
-      padding: 20px;
-    }
-    .script {
-      background: #1e293b;
-      border: 1px solid #334155;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      position: relative;
-    }
-    .hidden-script {
-      display: none;
-    }
-    button {
-      width: 100%;
-      background: #38bdf8;
-      color: #0f172a;
-      border: none;
-      padding: 12px;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #0ea5e9;
-    }
-  </style>
+  <title>Roblox Hub</title>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
-
-  <div class="script">
-    <div class="hidden-script">loadstring(game:HttpGet("https://example.com/silentaim.lua"))()</div>
-    <button onclick="copyScript(this)">Copy Silent Aim</button>
-  </div>
-
-  <div class="script">
-    <div class="hidden-script">loadstring(game:HttpGet("https://example.com/esp.lua"))()</div>
-    <button onclick="copyScript(this)">Copy ESP</button>
-  </div>
-
-  <script>
-    function copyScript(button) {
-      const code = button.previousElementSibling.innerText;
-      navigator.clipboard.writeText(code).then(() => {
-        const original = button.innerText;
-        button.innerText = "Copied!";
-        setTimeout(() => button.innerText = original, 2000);
-      });
-    }
-  </script>
+  <header>
+    <h2>Roblox Hub</h2>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="scripts.html">Scripts</a>
+    </nav>
+  </header>
+  <main class="container">
+    <div class="card">
+      <h2>Welcome to My Roblox Script Hub!</h2>
+      <p>Browse and use various custom scripts for Roblox. Click the "Scripts" tab to get started.</p>
+    </div>
+  </main>
 </body>
 </html>
