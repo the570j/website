@@ -2,27 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Roblox Galaxy Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
 </head>
-<body class="space-bg">
+<body>
+
+  <div id="starfield"></div>
+
   <header>
-    <div class="logo">🚀 Galaxy Hub</div>
+    <div class="logo">🚀 Roblox Galaxy Hub</div>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="scripts.html">Scripts</a>
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="scripts.html" class="nav-link">Scripts</a>
     </nav>
   </header>
-  <main class="container">
-    <div class="planet planet-1"></div>
-    <div class="planet planet-2"></div>
-    <section class="card center">
-      <h1>Welcome to Galaxy Hub</h1>
-      <p>Your place for out-of-this-world Roblox scripts.</p>
-      <a href="scripts.html"><button>View Scripts</button></a>
+
+  <main>
+    <section class="hero">
+      <h1>Welcome to the Roblox Galaxy Hub</h1>
+      <p>Your portal for out-of-this-world Roblox scripts with cosmic power.</p>
+      <a href="scripts.html" class="btn-glow">Explore Scripts</a>
     </section>
+
+    <div class="planets-container">
+      <div class="planet planet1"></div>
+      <div class="planet planet2"></div>
+      <div class="planet planet3"></div>
+    </div>
   </main>
+
+  <footer>
+    <p>© 2025 Roblox Galaxy Hub | Made with ❤️ in Space</p>
+  </footer>
+
+  <script src="assets/stars.js"></script>
+
 </body>
 </html>
